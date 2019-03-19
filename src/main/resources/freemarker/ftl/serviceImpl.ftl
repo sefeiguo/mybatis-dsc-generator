@@ -1,7 +1,7 @@
 /**
  * @filename:${entityName}ServiceImpl ${createTime}
  * @project ${project}  ${version}
- * Copyright(c) 2018 ${author} Co. Ltd. 
+ * Copyright(c) 2019 ${author} Co. Ltd.
  * All right reserved. 
  */
 package ${serviceImplUrl};
@@ -12,8 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
-import com.item.util.AppPage;
+import com.infodt.common.PageInfo;
 import ${entityUrl}.${entityName};
 import ${daoUrl}.${entityName}Dao;
 import ${serviceUrl}.${entityName}Service;
@@ -64,11 +63,8 @@ public class ${entityName}ServiceImpl implements ${entityName}Service {
 	
 	//分页查询
 	@Override
-	public PageInfo<${entityName}> get${entityName}BySearch(AppPage<${entityName}> page) {
-		// TODO Auto-generated method stub
-		PageHelper.startPage(page.getPageNum(),page.getPageSize());
-		List<${entityName}> list=${objectName}Dao.query${entityName}List(page.getParam());
-		PageInfo<${entityName}> pageInfo = new PageInfo<${entityName}>(list);
-		return pageInfo;
+	public ReportPage listPage(${entityName} ${objectName},PageInfo pageInfo) {
+		PageHelper.startPage(pageInfo.getStart(),pageInfo.getRows());
+        return new ReportPage(${objectName}Dao.listPage(${objectName}));
 	}
 }

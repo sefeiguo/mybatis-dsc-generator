@@ -1,15 +1,15 @@
 /**
  * @filename:${entityName}Service ${createTime}
  * @project ${project}  ${version}
- * Copyright(c) 2018 ${author} Co. Ltd. 
+ * Copyright(c) 2019 ${author} Co. Ltd.
  * All right reserved. 
  */
 package ${serviceUrl};
 
 import java.util.List;
 
-import com.github.pagehelper.PageInfo;
-import com.item.util.AppPage;
+import com.infodt.common.PageInfo;
+import com.infodt.common.plugin.ReportPage;
 import ${entityUrl}.${entityName};
 /**   
  *  
@@ -67,5 +67,5 @@ public interface ${entityName}Service {
 	 * @return  PageInfo<${entityName}>
 	 * @author  ${author}
 	 */
-	public PageInfo<${entityName}> get${entityName}BySearch(AppPage<${entityName}> page);
+	ReportPage listPage(${entityName} ${objectName},PageInfo pageInfo) throws Exception;
 }

@@ -43,6 +43,9 @@ public class EntityInfoUtil {
 				if (column.equalsIgnoreCase("id")) {
 					bi.setIdType(ci.getJavaType());
 					bi.setIdJdbcType(ci.getJdbcType());
+				}else{
+					bi.setIdType("String");
+					bi.setIdJdbcType(ci.getJdbcType());
 				}
 				columns.add(ci);
 			}
@@ -69,7 +72,7 @@ public class EntityInfoUtil {
 		}else if(type.equals("serviceImpl")) {
 			return url+pageToUrl(packageUrl)+entityName+"ServiceImpl.java";
 		}else if(type.equals("controller")) {
-			return url+pageToUrl(packageUrl)+entityName+"Controller.java";
+			return url+pageToUrl(packageUrl)+entityName+"Api.java";
 		}
 		return null;
 	}

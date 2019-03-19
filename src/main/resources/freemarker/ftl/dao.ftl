@@ -1,7 +1,7 @@
 /**
  * @filename:${entityName}Dao ${createTime}
  * @project ${project}  ${version}
- * Copyright(c) 2018 ${author} Co. Ltd. 
+ * Copyright(c) 2019 ${author} Co. Ltd.
  * All right reserved. 
  */
 package ${daoUrl};
@@ -29,6 +29,6 @@ public interface ${entityName}Dao {
 	
 	public int updateByPrimaryKeySelective(${entityName} ${objectName});
 	
-	public List<${entityName}> query${entityName}List(${entityName} ${objectName});
+	public List<${entityName}> listPage(${entityName} ${objectName});
 }
 	

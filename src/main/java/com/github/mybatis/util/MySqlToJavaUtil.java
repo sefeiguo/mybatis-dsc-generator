@@ -43,6 +43,8 @@ public class MySqlToJavaUtil {
 			return "Date";
 		} else if (sqlType.equalsIgnoreCase("image")) {
 			return "Blod";
+		} else if(sqlType.equalsIgnoreCase("enum")){
+			return "String";
 		}
 		return null;
 	}
